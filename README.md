@@ -17,12 +17,33 @@ A Raspberry Pi 4 is also used as a lightweight security monitoring and logging s
 
 3. Hardware
 - Router: Cudy TR3000
-- Firmware: OpenWRT
+- Firmware: OpenWRT 25.12.5
+
+- LTE modem: Quectel EC25-EUX
+- USB adapter for EC25
+- Two external LTE antennas
 
 - Raspberry pi 4 (1 GB) 
 - Pendrive 64 GB
 
-4. Network Architecture
+4. LTE
+The internet connection is provided by Quectel EX25-EUX LTE modem connected to the router through USB.
+
+The modem uses QMI and create the `wwan0` network interface.
+
+Two external LTE antennas are connected to modem.
+
+I tested LTE Bands B1, B3, B7 and B20.
+Band 3 provided the best and most stable results, so the modem was configured to use B3.
+
+Band 3 test:
+- Download: 24-28 Mb/s
+- Upload: 24 Mb/s
+- Ping 22 ms
+
+The detailed modem configuration is documented separately.
+
+5. Network Architecture
 
 The network divided info four VLANs. Each VLAN has a different purpose and is isolated the other networks by firewall rules.
 
@@ -51,7 +72,7 @@ The network divided info four VLANs. Each VLAN has a different purpose and is is
 - Internet access only
 - No access to internal network
 
-5. Network Diagram
+6. Network Diagram
 
 ![Network Diagram](diagrams/network-diagram.png)
 
