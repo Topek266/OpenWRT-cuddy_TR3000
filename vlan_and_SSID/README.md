@@ -31,7 +31,7 @@ The LAN port was assigned to VLAN 20 as untagged/PVID, so a device connected via
 
 Each VLAN was separately assigned to its corresponding SSID.
 
-![bridge_vlan_filtering](/screenshots/br-lan_and_vlans.png)
+![bridge_vlan_filtering](/screenshots/bridge_vlan_filtering.png)
 ![br-lan_and_vlans](/screenshots/br-lan_and_vlans.png)
 
 ---
