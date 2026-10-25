@@ -96,7 +96,7 @@ The router receives a private address from the range:
 
 ## Tailscale Interface
 
-OpenWrt uses:
+OpenWrt uses::
 
 ```text
 tailscale0
@@ -104,7 +104,7 @@ tailscale0
 
 A logical OpenWrt interface and a separate firewall zone were created for it.
 
-![Tailscale Interface](screenshots/tailscale-interface.png)
+![Tailscale Interface](/screenshots/tailscale-interface.png)
 
 ---
 
@@ -122,8 +122,8 @@ MSS Clamping: enabled
 
 Incoming traffic is blocked by default and only selected services are allowed with specific firewall rules.
 
-![Firewall Zone Tailscale](screenshots/Firewall-zone-tailscale.png)
-![Firewall Rules Tailscale](screenshots/Firewall-rules-tailscale)
+![Firewall Zone Tailscale](../screenshots/Firewall-zone-tailscale.png)
+![Firewall Rules Tailscale](../screenshots/Firewall-rules-tailscale.png)
 
 ---
 
