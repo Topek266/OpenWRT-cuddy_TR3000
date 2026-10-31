@@ -163,7 +163,7 @@ I confirmed that the logs were successfully received by syslog-ng and appeared i
 
 I also tested LogsQL queries to filter events from services such as **Dropbear, Tailscale, Unbound and hostapd**.
 
-![Screenshot VictoriaLogs](/screenshots/victorialogs-logs.png)
+![Screenshot VictoriaLogs](./screenshots/victorialogs-logs.png)
 
 ## 6. CrowdSec
 
