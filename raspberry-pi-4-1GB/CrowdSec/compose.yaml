@@ -1,0 +1,29 @@
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec:v1.8.2
+    container_name: crowdsec
+    restart: unless-stopped
+
+    mem_limit: 320m
+
+    environment:
+      TZ: Europe/Warsaw
+      COLLECTIONS: "crowdsecurity/linux"
+      PARSERS: "crowdsecurity/dropbear-logs"
+
+    volumes:
+      - crowdsec_config:/etc/crowdsec
+      - crowdsec_data:/var/lib/crowdsec/data
+      - ./acquis.d:/etc/crowdsec/acquis.d:ro
+      - /var/log/openwrt:/logs/openwrt:ro
+
+    networks:
+      - security_monitoring
+
+volumes:
+  crowdsec_config:
+  crowdsec_data:
+
+networks:
+  security_monitoring:
+    external: true

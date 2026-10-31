@@ -1,0 +1,7 @@
+ource: file
+
+filenames:
+  - /logs/openwrt/cudy.log
+
+labels:
+  type: syslog

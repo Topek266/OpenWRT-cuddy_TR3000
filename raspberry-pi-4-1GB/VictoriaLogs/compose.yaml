@@ -1,0 +1,24 @@
+services:
+  victorialogs:
+    image: victoriametrics/victoria-logs:v1.53.0
+    container_name: victorialogs
+    restart: unless-stopped
+
+    mem_limit: 384m
+
+    ports:
+      - "127.0.0.1:9428:9428"
+      - "127.0.0.1:29514:29514"
+
+    command:
+      - "-storageDataPath=/victoria-logs-data"
+      - "-retentionPeriod=7d"
+      - "-retention.maxDiskSpaceUsageBytes=2GiB"
+      - "-memory.allowedBytes=128MiB"
+      - "-syslog.listenAddr.tcp=:29514"
+
+    volumes:
+      - victorialogs_data:/victoria-logs-data
+
+volumes:
+  victorialogs_data:
